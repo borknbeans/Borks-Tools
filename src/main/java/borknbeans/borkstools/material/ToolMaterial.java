@@ -19,7 +19,8 @@ public record ToolMaterial(
         int enchantmentValue,
         float durabilityMultiplier,
         TagKey<Item> repairItems,
-        Identifier craftingIngredient
+        Identifier craftingIngredient,
+        int color
 ) {
     private static final Map<String, TagKey<Block>> MINING_LEVELS = Map.of(
         "wood",      BlockTags.INCORRECT_FOR_WOODEN_TOOL,
@@ -50,6 +51,9 @@ public record ToolMaterial(
 
         Identifier craftingIngredient = Identifier.parse(json.get("crafting_ingredient").getAsString());
 
-        return new ToolMaterial(id, incorrectBlocks, durability, speed, attackDamageBonus, enchantmentValue, durabilityMultiplier, repairItems, craftingIngredient);
+        String colorStr = json.get("color").getAsString().replace("#", "");
+        int color = (int) Long.parseLong(colorStr, 16) | 0xFF000000;
+
+        return new ToolMaterial(id, incorrectBlocks, durability, speed, attackDamageBonus, enchantmentValue, durabilityMultiplier, repairItems, craftingIngredient, color);
     }
 }

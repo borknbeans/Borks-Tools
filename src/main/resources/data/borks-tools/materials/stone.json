@@ -6,5 +6,6 @@
   "enchantment_value": 5,
   "durability_multiplier": 1.1,
   "repair_items": "#minecraft:stone_tool_materials",
-  "crafting_ingredient": "minecraft:cobblestone"
+  "crafting_ingredient": "minecraft:cobblestone",
+  "color": "#7d7d7d"
 }

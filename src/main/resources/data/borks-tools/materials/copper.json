@@ -6,5 +6,6 @@
   "enchantment_value": 13,
   "durability_multiplier": 1.15,
   "repair_items": "#minecraft:copper_tool_materials",
-  "crafting_ingredient": "minecraft:copper_ingot"
+  "crafting_ingredient": "minecraft:copper_ingot",
+  "color": "#ff9c49"
 }

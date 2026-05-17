@@ -16,11 +16,14 @@ import net.minecraft.world.entity.ai.attributes.AttributeModifier;
 import net.minecraft.world.entity.ai.attributes.Attributes;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.component.ItemAttributeModifiers;
+import net.minecraft.world.item.component.Tool;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.crafting.CraftingInput;
 import net.minecraft.world.item.crafting.CustomRecipe;
 import net.minecraft.world.item.crafting.RecipeSerializer;
 import net.minecraft.world.level.Level;
+
+import java.util.List;
 
 public class AssemblyRecipe extends CustomRecipe {
 
@@ -60,6 +63,9 @@ public class AssemblyRecipe extends CustomRecipe {
                 if (head != null && handle != null && binding != null) {
                     int durability = (int) ((head.durability() + handle.durability()) * binding.durabilityMultiplier());
                     result.set(DataComponents.MAX_DAMAGE, durability);
+                    // Empty rules — getDestroySpeed/isCorrectToolForDrops overrides handle logic.
+                    // damagePerBlock=1 is required for mineBlock() to consume durability.
+                    result.set(DataComponents.TOOL, new Tool(List.of(), 1.0f, 1, true));
 
                     float attackDamage = 1.0f + head.attackDamageBonus();
                     result.set(DataComponents.ATTRIBUTE_MODIFIERS, ItemAttributeModifiers.builder()

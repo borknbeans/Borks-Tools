@@ -6,5 +6,6 @@
   "enchantment_value": 22,
   "durability_multiplier": 1.5,
   "repair_items": "#minecraft:gold_tool_materials",
-  "crafting_ingredient": "minecraft:gold_ingot"
+  "crafting_ingredient": "minecraft:gold_ingot",
+  "color": "#ffdf22"
 }
