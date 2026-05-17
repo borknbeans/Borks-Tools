@@ -1,0 +1,14 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(xargs grep -l \"ResourceReloadListener\\\\|SimpleSynchronousResourceReloadListener\\\\|SimpleReloadListener\")",
+      "Bash(find \"C:\\\\Users\\\\ebork\\\\.gradle\\\\caches\" -name \"*.jar\" -path \"*fabric*\" 2>&1 | head -20)",
+      "Bash(find \"C:\\\\Users\\\\ebork\\\\.gradle\" -type d -name \"sources\" 2>&1 | head -5)",
+      "Bash(find \"C:\\\\Users\\\\ebork\\\\.idea\" -type f -name \"*.xml\" 2>&1 | head -20)",
+      "Bash(Get-ChildItem -Path \"C:\\\\Users\\\\ebork\\\\.gradle\" -Directory -ErrorAction SilentlyContinue)",
+      "Bash(Select-Object -First 20)",
+      "PowerShell(ls -Recurse \"C:\\\\Users\\\\ebork\\\\.gradle\\\\caches\\\\fabric-loom\" -Directory | Select-Object -First 30 | % { $_.FullName })",
+      "PowerShell(javap -version)"
+    ]
+  }
+}

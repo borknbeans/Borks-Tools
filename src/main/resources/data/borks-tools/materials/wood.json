@@ -1,0 +1,10 @@
+{
+  "mining_level": "wood",
+  "durability": 59,
+  "speed": 2.0,
+  "attack_damage_bonus": 0.0,
+  "enchantment_value": 15,
+  "durability_multiplier": 1.0,
+  "repair_items": "#minecraft:planks",
+  "crafting_ingredient": "minecraft:oak_planks"
+}

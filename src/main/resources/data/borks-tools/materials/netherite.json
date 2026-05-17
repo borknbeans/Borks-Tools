@@ -1,0 +1,10 @@
+{
+  "mining_level": "netherite",
+  "durability": 2031,
+  "speed": 9.0,
+  "attack_damage_bonus": 4.0,
+  "enchantment_value": 15,
+  "durability_multiplier": 1.5,
+  "repair_items": "#minecraft:netherite_tool_materials",
+  "crafting_ingredient": "minecraft:netherite_ingot"
+}

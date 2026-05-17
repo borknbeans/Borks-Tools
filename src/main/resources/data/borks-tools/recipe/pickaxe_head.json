@@ -1,0 +1,5 @@
+{
+  "type": "borks-tools:part_crafting",
+  "catalyst": "minecraft:paper",
+  "result": "borks-tools:pickaxe_head"
+}

@@ -1,0 +1,5 @@
+{
+  "type": "borks-tools:part_crafting",
+  "catalyst": "minecraft:stick",
+  "result": "borks-tools:handle"
+}
