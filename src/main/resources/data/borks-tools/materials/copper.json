@@ -4,7 +4,8 @@
   "speed": 5.0,
   "attack_damage_bonus": 1.0,
   "enchantment_value": 13,
-  "durability_multiplier": 1.15,
+  "speed_multiplier": 1.05,
+  "durability_multiplier": 0.95,
   "repair_items": "#minecraft:copper_tool_materials",
   "crafting_ingredient": "minecraft:copper_ingot",
   "color": "#ff9c49"

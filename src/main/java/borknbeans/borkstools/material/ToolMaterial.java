@@ -17,6 +17,7 @@ public record ToolMaterial(
         float speed,
         float attackDamageBonus,
         int enchantmentValue,
+        float speedMultiplier,
         float durabilityMultiplier,
         TagKey<Item> repairItems,
         Identifier craftingIngredient,
@@ -43,6 +44,7 @@ public record ToolMaterial(
         float speed = json.get("speed").getAsFloat();
         float attackDamageBonus = json.get("attack_damage_bonus").getAsFloat();
         int enchantmentValue = json.get("enchantment_value").getAsInt();
+        float speedMultiplier = json.get("speed_multiplier").getAsFloat();
         float durabilityMultiplier = json.get("durability_multiplier").getAsFloat();
 
         String tagStr = json.get("repair_items").getAsString();
@@ -54,6 +56,6 @@ public record ToolMaterial(
         String colorStr = json.get("color").getAsString().replace("#", "");
         int color = (int) Long.parseLong(colorStr, 16) | 0xFF000000;
 
-        return new ToolMaterial(id, incorrectBlocks, durability, speed, attackDamageBonus, enchantmentValue, durabilityMultiplier, repairItems, craftingIngredient, color);
+        return new ToolMaterial(id, incorrectBlocks, durability, speed, attackDamageBonus, enchantmentValue, speedMultiplier, durabilityMultiplier, repairItems, craftingIngredient, color);
     }
 }

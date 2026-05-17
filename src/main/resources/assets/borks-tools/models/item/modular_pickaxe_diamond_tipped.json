@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:item/handheld",
+  "textures": {
+    "layer0": "borks-tools:item/modular_pickaxe_diamond_tipped"
+  }
+}

@@ -5,6 +5,7 @@ import borknbeans.borkstools.material.ToolMaterial;
 import borknbeans.borkstools.registry.ModComponents;
 import borknbeans.borkstools.registry.ModItems;
 import borknbeans.borkstools.registry.ModRecipes;
+import borknbeans.borkstools.registry.ModularToolItem;
 import com.mojang.serialization.MapCodec;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.core.component.DataComponents;
@@ -61,8 +62,7 @@ public class AssemblyRecipe extends CustomRecipe {
                 ToolMaterial binding = MaterialReloader.MATERIALS.get(bindingId);
 
                 if (head != null && handle != null && binding != null) {
-                    int durability = (int) ((head.durability() + handle.durability()) * binding.durabilityMultiplier());
-                    result.set(DataComponents.MAX_DAMAGE, durability);
+                    ModularToolItem.recalculate(result);
                     // Empty rules — getDestroySpeed/isCorrectToolForDrops overrides handle logic.
                     // damagePerBlock=1 is required for mineBlock() to consume durability.
                     result.set(DataComponents.TOOL, new Tool(List.of(), 1.0f, 1, true));

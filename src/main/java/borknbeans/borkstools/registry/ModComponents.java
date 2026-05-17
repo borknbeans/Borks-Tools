@@ -1,6 +1,7 @@
 package borknbeans.borkstools.registry;
 
 import borknbeans.borkstools.BorksTools;
+import com.mojang.serialization.Codec;
 import net.minecraft.core.Registry;
 import net.minecraft.core.component.DataComponentType;
 import net.minecraft.core.registries.BuiltInRegistries;
@@ -14,11 +15,16 @@ public class ModComponents {
     public static DataComponentType<Identifier> HANDLE_MATERIAL;
     public static DataComponentType<Identifier> BINDING_MATERIAL;
 
+    public static DataComponentType<Boolean> DIAMOND_TIPPED;
+    public static DataComponentType<Boolean> NETHERITE_PLATING;
+
     public static void init() {
         MATERIAL = register("material");
         HEAD_MATERIAL = register("head_material");
         HANDLE_MATERIAL = register("handle_material");
         BINDING_MATERIAL = register("binding_material");
+        DIAMOND_TIPPED = registerFlag("diamond_tipped");
+        NETHERITE_PLATING = registerFlag("netherite_plating");
     }
 
     private static DataComponentType<Identifier> register(String name) {
@@ -28,6 +34,17 @@ public class ModComponents {
             DataComponentType.<Identifier>builder()
                 .persistent(Identifier.CODEC)
                 .networkSynchronized(ByteBufCodecs.fromCodec(Identifier.CODEC))
+                .build()
+        );
+    }
+
+    private static DataComponentType<Boolean> registerFlag(String name) {
+        return Registry.register(
+            BuiltInRegistries.DATA_COMPONENT_TYPE,
+            Identifier.fromNamespaceAndPath(BorksTools.MOD_ID, name),
+            DataComponentType.<Boolean>builder()
+                .persistent(Codec.BOOL)
+                .networkSynchronized(ByteBufCodecs.BOOL)
                 .build()
         );
     }

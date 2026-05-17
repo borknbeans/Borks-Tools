@@ -4,7 +4,8 @@
   "speed": 4.0,
   "attack_damage_bonus": 1.0,
   "enchantment_value": 5,
-  "durability_multiplier": 1.1,
+  "speed_multiplier": 0.9,
+  "durability_multiplier": 1.2,
   "repair_items": "#minecraft:stone_tool_materials",
   "crafting_ingredient": "minecraft:cobblestone",
   "color": "#979797"

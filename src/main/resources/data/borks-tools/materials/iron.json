@@ -4,7 +4,8 @@
   "speed": 6.0,
   "attack_damage_bonus": 2.0,
   "enchantment_value": 14,
-  "durability_multiplier": 1.2,
+  "speed_multiplier": 0.95,
+  "durability_multiplier": 1.25,
   "repair_items": "#minecraft:iron_tool_materials",
   "crafting_ingredient": "minecraft:iron_ingot",
   "color": "#ffffff"
